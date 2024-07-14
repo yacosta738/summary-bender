@@ -1,8 +1,5 @@
 <template>
-  <AppContainer>
-    <AppHeader />
-    <PageContainer>
-      <NuxtPage />
-    </PageContainer>
-  </AppContainer>
+  <NuxtPage />
 </template>
+<script setup lang="ts">
+</script>
