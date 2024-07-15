@@ -3,7 +3,6 @@ const user = useSupabaseUser()
 
 watchEffect(() => {
   if (user.value) {
-    alert(user.value)
     navigateTo('/dashboard')
   }
 })
