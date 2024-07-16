@@ -31,7 +31,7 @@ importers:
         version: 1.4.2
       '@unovis/vue':
         specifier: ^1.4.2
-        version: 1.4.2(@unovis/ts@1.4.2)(vue@3.4.31(typescript@5.5.3))
+        version: 1.4.3(@unovis/ts@1.4.2)(vue@3.4.31(typescript@5.5.3))
       '@vueuse/core':
         specifier: ^10.11.0
         version: 10.11.0(vue@3.4.31(typescript@5.5.3))
@@ -1654,10 +1654,10 @@ packages:
   '@unovis/ts@1.4.2':
     resolution: {integrity: sha512-1Edm6Xpw4HKV2Gcw+CgA/UT8U70POqS6m8z1ulkkGuBM16aK4sI43TPuxmI+W16DKs/f4RpaCaHWgpzRQrs7JA==}
 
-  '@unovis/vue@1.4.2':
-    resolution: {integrity: sha512-9K4GnpdpwQ2ZysxlkaxRqa3DGxx+sfL+pMJmjByw82uU0dRr9RH8/TTIt8PYoQ2Gd6PMwJC4Kc4MCPb9LivvpA==}
+  '@unovis/vue@1.4.3':
+    resolution: {integrity: sha512-L45ncN+e1dynA2cvHyq2ss+hLNBBPC1bl+i9JNveLufl+k7qybbt2IrioKBGQEbVmzXuJ80r2f3cD64i6ca9jg==}
     peerDependencies:
-      '@unovis/ts': 1.4.2
+      '@unovis/ts': 1.4.3
       vue: ^3
 
   '@vercel/nft@0.26.5':
@@ -7007,7 +7007,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@unovis/vue@1.4.2(@unovis/ts@1.4.2)(vue@3.4.31(typescript@5.5.3))':
+  '@unovis/vue@1.4.3(@unovis/ts@1.4.2)(vue@3.4.31(typescript@5.5.3))':
     dependencies:
       '@unovis/ts': 1.4.2
       vue: 3.4.31(typescript@5.5.3)
