@@ -23,8 +23,12 @@ import {
 } from '@/components/ui/tabs'
 
 const sendEmail = async () => {
-  const { data } = await $fetch('/api/sendemail')
+  const { data } = await $fetch('/api/sendEmail')
   console.log(data)
+}
+const readEmail = async () => {
+  console.log('Reading email')
+ await $fetch('/api/syncEmails')
 }
 </script>
 
@@ -59,6 +63,7 @@ const sendEmail = async () => {
         <div class="flex items-center space-x-2">
           <DateRangePicker />
           <Button @click="sendEmail">Download</Button>
+          <Button @click="readEmail">Read Email</Button>
         </div>
       </div>
       <Tabs default-value="overview" class="space-y-4">
