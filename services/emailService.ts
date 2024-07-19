@@ -1,5 +1,5 @@
 import type {Box} from 'imap';
-import Imap from 'imap';
+import type Imap from 'imap';
 import type {Email} from "~/services/model/Email";
 import CONFIGURATIONS from "~/constants";
 
@@ -18,7 +18,7 @@ export const readEmails = async (sinceDate: string): Promise<Email[]> => {
     }
 
     imap.once('ready', function() {
-      openInbox(function(err, box) {
+      openInbox(function(err, _) {
         if (err) return reject(err);
         imap.search(['UNSEEN', ['SINCE', sinceDate]], function(err, results) {
           if (err) return reject(err);
@@ -31,7 +31,7 @@ export const readEmails = async (sinceDate: string): Promise<Email[]> => {
           f.on('message', function(msg, seqno) {
             const email: Email = { seqno, body: '', attributes: null, date: null };
 
-            msg.on('body', function(stream, info) {
+            msg.on('body', function(stream, _) {
               let body = '';
               stream.on('data', (chunk) => {
                 body += chunk.toString('utf8');

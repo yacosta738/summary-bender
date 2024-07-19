@@ -42,17 +42,17 @@ async function onSubmit(event: Event) {
           </Label>
           <Input
             id="email"
+            v-model="email"
             placeholder="name@example.com"
             type="email"
             auto-capitalize="none"
             auto-complete="email"
             auto-correct="off"
             :disabled="isLoading"
-            v-model="email"
           />
         </div>
         <Button :disabled="isLoading" type="submit">
-          <Icon name="tabler:loader-2" color="black" v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
+          <Icon v-if="isLoading" name="tabler:loader-2" color="black" class="mr-2 h-4 w-4 animate-spin" />
           Sign In with Email
         </Button>
       </div>
@@ -68,8 +68,8 @@ async function onSubmit(event: Event) {
       </div>
     </div>
     <Button variant="outline" type="button" :disabled="isLoading" @click="auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })">
-      <Icon name="mdi:loading" color="black" v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
-      <Icon name="hugeicons:github" color="black" v-else class="mr-2 h-4 w-4" />
+      <Icon v-if="isLoading" name="mdi:loading" color="black" class="mr-2 h-4 w-4 animate-spin" />
+      <Icon v-else name="hugeicons:github" color="black" class="mr-2 h-4 w-4" />
       GitHub
     </Button>
   </div>

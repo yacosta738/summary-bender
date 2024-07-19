@@ -33,17 +33,6 @@ const readEmail = async () => {
 </script>
 
 <template>
-  <div class="md:hidden">
-    <NuxtImg
-        alt="Dashboard"
-        width="1280"
-        height="1214" class="block" :image="{
-        dark: '/examples/dashboard-dark.png',
-        light: '/examples/dashboard-light.png',
-      }"
-    />
-  </div>
-
   <div class="hidden flex-col md:flex">
     <div class="border-b">
       <div class="flex h-16 items-center px-4">

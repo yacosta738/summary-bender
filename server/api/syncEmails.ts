@@ -1,7 +1,7 @@
 import {getLastSyncedDate, updateSyncState} from "~/services/syncService";
 import {readEmails} from "~/services/emailService";
 import {saveEmailsToSupabase} from "~/services/databaseService";
-import {EventHandlerRequest, H3Event} from "h3";
+import type {EventHandlerRequest, H3Event} from "h3";
 
 export default defineEventHandler(async (event: H3Event<EventHandlerRequest>) => {
   try {

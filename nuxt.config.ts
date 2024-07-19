@@ -9,8 +9,12 @@ export default defineNuxtConfig({
     "@nuxt/image",
     '@nuxtjs/color-mode',
     "@nuxt/icon",
-    'nuxt-nodemailer'
+    'nuxt-nodemailer',
+    "@nuxt/eslint"
   ],
+  eslint: {
+    // options here
+  },
   colorMode: {
     classSuffix: ''
   },
