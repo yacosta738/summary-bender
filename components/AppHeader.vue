@@ -33,8 +33,8 @@ const logout = async () => {
           size="icon"
           @click="toggleDark"
         >
-          <Icon name="ph:moon" color="black" v-if="colorMode.value === 'light'"  class="mr-2 h-4 w-4" />
-          <Icon name="ph:sun" color="black" v-else  class="mr-2 h-4 w-4" />
+          <Icon v-if="colorMode.value === 'light'" name="ph:moon" color="black"  class="mr-2 h-4 w-4" />
+          <Icon v-else name="ph:sun" color="black"  class="mr-2 h-4 w-4" />
         </Button>
         <a
           href="/examples/authentication"
