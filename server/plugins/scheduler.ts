@@ -1,7 +1,7 @@
 import cron from 'node-cron'
 
 export default defineNitroPlugin(() => {
-  if (process.env.APP_ENV === 'build') {
+  if (process.env.APP_CRON !== 'local') {
     console.log('[server/plugins/scheduler.ts] Skipping scheduler, don\'t run in build context');
     return;
   }

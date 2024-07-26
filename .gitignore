@@ -25,3 +25,4 @@ logs
 
 # IDEA files
 .idea
+.vercel
