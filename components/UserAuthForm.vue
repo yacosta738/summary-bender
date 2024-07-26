@@ -23,6 +23,7 @@ const signInWithOtp = async () => {
   await supabase.auth.signInWithOtp({
     email: email.value,
   })
+  alert('Check your email for the login link!')
 }
 async function onSubmit(event: Event) {
   event.preventDefault()

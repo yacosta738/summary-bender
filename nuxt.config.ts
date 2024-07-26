@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import vue from '@vitejs/plugin-vue'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: {enabled: true},
@@ -10,8 +11,14 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     "@nuxt/icon",
     'nuxt-nodemailer',
-    "@nuxt/eslint"
+    "@nuxt/eslint",
+    '@vue-email/nuxt'
   ],
+  nitro: {
+    rollupConfig: {
+      plugins: [vue()]
+    },
+  },
   eslint: {
     // options here
   },

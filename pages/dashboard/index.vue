@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import Overview from '@/components/Overview.vue'
 import DateRangePicker from '@/components/DateRangePicker.vue'
-import MainNav from '@/components/MainNav.vue'
 import RecentSales from '@/components/RecentSales.vue'
-import Search from '@/components/Search.vue'
-import TeamSwitcher from '@/components/TeamSwitcher.vue'
-import UserNav from '@/components/UserNav.vue'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -21,29 +17,20 @@ import {
   TabsList,
   TabsTrigger,
 } from '@/components/ui/tabs'
+import AppNavbar from "~/components/AppNavbar.vue";
 
 const sendEmail = async () => {
-  const { data } = await $fetch('/api/sendEmail')
-  console.log(data)
+  await $fetch('/api/sendEmail')
 }
 const readEmail = async () => {
   console.log('Reading email')
- await $fetch('/api/syncEmails')
+ await $fetch('/api/subscribeEmail')
 }
 </script>
 
 <template>
   <div class="hidden flex-col md:flex">
-    <div class="border-b">
-      <div class="flex h-16 items-center px-4">
-        <TeamSwitcher />
-        <MainNav class="mx-6" />
-        <div class="ml-auto flex items-center space-x-4">
-          <Search />
-          <UserNav />
-        </div>
-      </div>
-    </div>
+    <AppNavbar />
     <div class="flex-1 space-y-4 p-8 pt-6">
       <div class="flex items-center justify-between space-y-2">
         <h2 class="text-3xl font-bold tracking-tight">
@@ -51,7 +38,7 @@ const readEmail = async () => {
         </h2>
         <div class="flex items-center space-x-2">
           <DateRangePicker />
-          <Button @click="sendEmail">Download</Button>
+          <Button @click="sendEmail">Send Email</Button>
           <Button @click="readEmail">Read Email</Button>
         </div>
       </div>

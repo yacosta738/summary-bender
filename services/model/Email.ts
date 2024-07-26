@@ -1,6 +1,18 @@
+export enum EmailStatus {
+  UNPROCESSED = 'UNPROCESSED',
+  PROCESSED = 'PROCESSED',
+  SUMMARIZED = 'SUMMARIZED',
+  ERROR = 'ERROR',
+  READY = 'SENT',
+}
+
 export interface Email {
-  seqno: number;
+  from: string;
+  to: string;
+  subject: string;
   body: string;
-  attributes: any;
-  date: Date | null;
+  date: Date;
+  status: EmailStatus;
+  summary: string;
+  received_at: Date;
 }

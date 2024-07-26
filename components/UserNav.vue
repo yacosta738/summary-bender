@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
+import {Button} from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,6 +14,12 @@ import {
 const client = useSupabaseClient()
 const user = useSupabaseUser()
 
+const {data} = await client
+.from('profiles')
+.select(`username, website, avatar_url`)
+.eq('id', user.value.id)
+.single()
+const avatarUrl = ref(data?.avatar_url ?? user.value.user_metadata.avatar_url)
 const logout = async () => {
   await client.auth.signOut()
   navigateTo('/')
@@ -35,10 +36,11 @@ watchEffect(() => {
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
       <Button variant="ghost" class="relative h-8 w-8 rounded-full">
-        <Avatar class="h-8 w-8">
-          <AvatarImage :src="user.user_metadata.avatar_url" :alt="`@${user.user_metadata.user_name}`" />
-          <AvatarFallback>SC</AvatarFallback>
-        </Avatar>
+        <ProfileAvatar
+v-model:path="avatarUrl"
+          class="h-8 w-8"
+                       :alt="`Avatar for ${user.user_metadata.full_name}`"
+        />
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="w-56" align="end">
@@ -52,23 +54,22 @@ watchEffect(() => {
           </p>
         </div>
       </DropdownMenuLabel>
-      <DropdownMenuSeparator />
+      <DropdownMenuSeparator/>
       <DropdownMenuGroup>
-        <DropdownMenuItem>
-          Profile
-          <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          Billing
-          <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-        </DropdownMenuItem>
+        <NuxtLink to="/dashboard/profile">
+          <DropdownMenuItem>
+            Profile
+            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </NuxtLink>
+        <NuxtLink to="/dashboard/settings">
         <DropdownMenuItem>
           Settings
           <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
         </DropdownMenuItem>
-        <DropdownMenuItem>New Team</DropdownMenuItem>
+        </NuxtLink>
       </DropdownMenuGroup>
-      <DropdownMenuSeparator />
+      <DropdownMenuSeparator/>
       <DropdownMenuItem @click="logout">
         Log out
         <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
