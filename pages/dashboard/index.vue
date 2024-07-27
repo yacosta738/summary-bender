@@ -23,7 +23,6 @@ const sendEmail = async () => {
   await $fetch('/api/sendEmail')
 }
 const readEmail = async () => {
-  console.log('Reading email')
  await $fetch('/api/subscribeEmail')
 }
 </script>

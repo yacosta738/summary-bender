@@ -1,9 +1,12 @@
 <script setup lang="ts">
-
+import FormsLayout from "~/layouts/FormsLayout.vue";
+import {SettingsForm} from "#components";
 </script>
 
 <template>
-<h1>Settings</h1>
+  <FormsLayout>
+    <SettingsForm />
+  </FormsLayout>
 </template>
 
 <style scoped>

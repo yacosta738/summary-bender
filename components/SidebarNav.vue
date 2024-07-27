@@ -15,6 +15,10 @@ const sidebarNavItems: Item[] = [
     href: '/dashboard/profile',
   },
   {
+    title: 'Settings',
+    href: '/dashboard/settings',
+  },
+  {
     title: 'Appearance',
     href: '/dashboard/appearance',
   },
