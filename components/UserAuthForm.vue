@@ -9,7 +9,8 @@ import { Label } from '@/components/ui/label'
 const user = useSupabaseUser()
 const supabase = useSupabaseClient()
 const { auth } = useSupabaseClient()
-const redirectTo = `${useRuntimeConfig().public.baseUrl}/confirm`
+const config = useRuntimeConfig()
+const redirectTo = `${config.public.baseUrl}/confirm`
 
 watchEffect(() => {
   if (user.value) {
@@ -31,6 +32,9 @@ async function onSubmit(event: Event) {
   await signInWithOtp()
   isLoading.value = false
 }
+
+const githubAuth = async () => auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })
+
 </script>
 
 <template>
@@ -68,7 +72,7 @@ async function onSubmit(event: Event) {
         </span>
       </div>
     </div>
-    <Button variant="outline" type="button" :disabled="isLoading" @click="auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })">
+    <Button variant="outline" type="button" :disabled="isLoading" @click="githubAuth">
       <Icon v-if="isLoading" name="mdi:loading" color="black" class="mr-2 h-4 w-4 animate-spin" />
       <Icon v-else name="hugeicons:github" color="black" class="mr-2 h-4 w-4" />
       GitHub

@@ -48,7 +48,6 @@ export default defineEventHandler(async (event) => {
       // Send the email
       await sendMail(emailData);
       // Update the email status in the database
-      console.log('✨✨✨✨✨✨✨ Updating email status...');
       const {error} =await client
       .from('emails')
       .update({status: 'SENT'})

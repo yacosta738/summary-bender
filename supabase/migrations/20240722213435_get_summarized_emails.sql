@@ -11,6 +11,7 @@ CREATE OR REPLACE FUNCTION get_summarized_emails()
             summary                TEXT,
             received_at            TIMESTAMP,
             email_alias_identifier TEXT,
+            notifications_enabled   BOOLEAN,
             user_email             TEXT
           )
 AS
@@ -28,12 +29,15 @@ BEGIN
            e.summary,
            e.received_at,
            s.email_alias_identifier,
+           s.notifications_enabled,
            p.email AS user_email
     FROM emails e
            JOIN
          settings s ON substring(e."to" from '\+(.*)@') = s.email_alias_identifier
            JOIN
          profiles p ON s.id = p.id
-    WHERE e.status = 'SUMMARIZED';
+    WHERE e.status = 'SUMMARIZED'
+    AND s.notifications_enabled = TRUE
+    ORDER BY e.date DESC;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;

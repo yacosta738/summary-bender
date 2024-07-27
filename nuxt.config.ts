@@ -28,6 +28,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+      generalEmail: process.env.SMTP_USER || ''
     },
   },
   shadcn: {
@@ -53,7 +54,7 @@ export default defineNuxtConfig({
     },
   },
   nodemailer: {
-    from: '"John Doe" <john@doe.com>',
+    from: '"Summary Bender" <summary-bender@gmail.com>',
     host: process.env.SMTP_HOST || 'smtp.gmail.com',
     port: process.env.SMTP_PORT || 587,
     secure: process.env.NODE_ENV === 'production',
