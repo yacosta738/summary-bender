@@ -5,12 +5,12 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import {toast} from "~/components/ui/toast";
 
 const user = useSupabaseUser()
 const supabase = useSupabaseClient()
 const { auth } = useSupabaseClient()
-const config = useRuntimeConfig()
-const redirectTo = `${config.public.baseUrl}/confirm`
+const redirectTo = `${useRequestURL().origin}/confirm`
 
 watchEffect(() => {
   if (user.value) {
@@ -24,7 +24,10 @@ const signInWithOtp = async () => {
   await supabase.auth.signInWithOtp({
     email: email.value,
   })
-  alert('Check your email for the login link!')
+  toast({
+    title: 'Sign-in link sent',
+    description: 'Check your email for the sign-in link.',
+  })
 }
 async function onSubmit(event: Event) {
   event.preventDefault()
