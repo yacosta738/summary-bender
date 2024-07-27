@@ -10,7 +10,7 @@ import {toast} from "~/components/ui/toast";
 const user = useSupabaseUser()
 const supabase = useSupabaseClient()
 const { auth } = useSupabaseClient()
-// const redirectTo = `${useRequestURL().origin}/confirm`
+const redirectTo = `${useRequestURL().origin}/confirm`
 
 watchEffect(() => {
   if (user.value) {
@@ -35,18 +35,8 @@ async function onSubmit(event: Event) {
   await signInWithOtp()
   isLoading.value = false
 }
-const getURL = () => {
-  let url =
-    process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
-    process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
-    'http://localhost:3000/'
-  // Make sure to include `https://` when not localhost.
-  url = url.startsWith('http') ? url : `https://${url}`
-  // Make sure to include a trailing `/`.
-  url = url.endsWith('/') ? url : `${url}/`
-  return url
-}
-const githubAuth = async () => auth.signInWithOAuth({ provider: 'github', options: { redirectTo: getURL() } })
+
+const githubAuth = async () => auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })
 
 </script>
 
