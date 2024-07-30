@@ -1,28 +1,42 @@
 <script setup lang="ts">
-import { Calendar as CalendarIcon } from 'lucide-vue-next'
-import type { DateRange } from 'radix-vue'
-import { CalendarDate, DateFormatter, getLocalTimeZone } from '@internationalized/date'
-
-import { type Ref, ref } from 'vue'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { RangeCalendar } from '@/components/ui/range-calendar'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
+import {Calendar as CalendarIcon} from 'lucide-vue-next'
+import type {DateRange} from 'radix-vue'
+import type {CalendarDate, DateValue,} from '@internationalized/date';
+import {DateFormatter, getLocalTimeZone, parseDate} from '@internationalized/date';
+import {useFiltersStore} from '~/store/dateRange'
+import {storeToRefs} from 'pinia'
+import {type Ref, ref} from 'vue'
+import {cn} from '@/lib/utils'
+import {Button} from '@/components/ui/button'
+import {RangeCalendar} from '@/components/ui/range-calendar'
+import {Popover, PopoverContent, PopoverTrigger,} from '@/components/ui/popover'
 
 const df = new DateFormatter('en-US', {
   dateStyle: 'medium',
 })
-
-const calendarDate = new CalendarDate(2023, 0, 20)
+const filtersStore = useFiltersStore()
+const {updateStartDate, updateValuesToFilterDateRange} = filtersStore
+const {filtersDateRange} = storeToRefs(filtersStore)
+const startDate: string = filtersDateRange.value.start;
+const endDate: string = filtersDateRange.value.end;
+const calendarStartDate: CalendarDate = parseDate(startDate)
+const calendarEndDate: CalendarDate = parseDate(endDate)
 
 const value = ref({
-  start: calendarDate,
-  end: calendarDate.add({ days: 20 }),
+  start: calendarStartDate,
+  end: calendarEndDate,
 }) as Ref<DateRange>
+
+const updateStartValue = (startDate: DateValue) => updateStartDate(startDate)
+
+watch(value, (newValue) => {
+  if (newValue.start && newValue.end) {
+    updateValuesToFilterDateRange({
+      start: newValue.start,
+      end: newValue.end,
+    } as DateRange)
+  }
+})
 </script>
 
 <template>
@@ -37,11 +51,12 @@ const value = ref({
             !value && 'text-muted-foreground',
           )"
         >
-          <CalendarIcon class="mr-2 h-4 w-4" />
+          <CalendarIcon class="mr-2 h-4 w-4"/>
 
           <template v-if="value.start">
             <template v-if="value.end">
-              {{ df.format(value.start.toDate(getLocalTimeZone())) }} - {{ df.format(value.end.toDate(getLocalTimeZone())) }}
+              {{ df.format(value.start.toDate(getLocalTimeZone())) }} -
+              {{ df.format(value.end.toDate(getLocalTimeZone())) }}
             </template>
 
             <template v-else>
@@ -60,7 +75,7 @@ const value = ref({
           :number-of-months="2"
           initial-focus
           :placeholder="value.start"
-          @update:start-value="(startDate) => value.start = startDate"
+          @update:start-value="updateStartValue"
         />
       </PopoverContent>
     </Popover>

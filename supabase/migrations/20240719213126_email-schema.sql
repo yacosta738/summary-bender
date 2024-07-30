@@ -19,27 +19,3 @@ CREATE TABLE SyncState (
                          id SERIAL PRIMARY KEY,
                          last_synced TIMESTAMP NOT NULL
 );
-
--- Habilitar RLS en las tablas Emails y SyncState
-ALTER TABLE Emails ENABLE ROW LEVEL SECURITY;
-ALTER TABLE SyncState ENABLE ROW LEVEL SECURITY;
-
--- Crear políticas de RLS para la tabla Emails
-CREATE POLICY "Public emails are viewable by everyone." ON Emails
-  FOR SELECT USING (true);
-
-CREATE POLICY "Users can insert their own emails." ON Emails
-  FOR INSERT WITH CHECK (auth.role() = 'authenticated');
-
-CREATE POLICY "Users can update email status and summary." ON Emails
-  FOR UPDATE USING (auth.role() = 'authenticated') WITH CHECK (auth.role() = 'authenticated');
-
--- Crear políticas de RLS para la tabla SyncState
-CREATE POLICY "Public sync state is viewable by everyone." ON SyncState
-  FOR SELECT USING (true);
-
-CREATE POLICY "Users can insert sync state." ON SyncState
-  FOR INSERT WITH CHECK (auth.role() = 'authenticated');
-
-CREATE POLICY "Users can update sync state." ON SyncState
-  FOR UPDATE USING (auth.role() = 'authenticated') WITH CHECK (auth.role() = 'authenticated');
