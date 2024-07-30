@@ -33,7 +33,7 @@
     "gravatar-url": "^4.0.1",
     "html-to-text": "^9.0.5",
     "imap": "^0.8.19",
-    "lucide-vue-next": "^0.416.0",
+    "lucide-vue-next": "^0.417.0",
     "node-cron": "^3.0.3",
     "nuxt": "^3.12.4",
     "pinia": "^2.2.0",

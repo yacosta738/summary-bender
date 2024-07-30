@@ -19,7 +19,7 @@ importers:
         version: 3.5.5
       '@nuxt/icon':
         specifier: ^1.3.1
-        version: 1.3.1(magicast@0.3.4)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.10)(terser@5.31.2))(vue@3.4.34(typescript@5.5.4))
+        version: 1.4.0(magicast@0.3.4)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.10)(terser@5.31.2))(vue@3.4.34(typescript@5.5.4))
       '@nuxt/image':
         specifier: ^1.7.0
         version: 1.7.0(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.18.1)
@@ -75,8 +75,8 @@ importers:
         specifier: ^0.8.19
         version: 0.8.19
       lucide-vue-next:
-        specifier: ^0.416.0
-        version: 0.416.0(vue@3.4.34(typescript@5.5.4))
+        specifier: ^0.417.0
+        version: 0.417.0(vue@3.4.34(typescript@5.5.4))
       node-cron:
         specifier: ^3.0.3
         version: 3.0.3
@@ -125,7 +125,7 @@ importers:
         version: 1.1.21
       '@iconify-json/simple-icons':
         specifier: ^1.1.110
-        version: 1.1.110
+        version: 1.1.111
       '@iconify-json/tabler':
         specifier: ^1.1.118
         version: 1.1.118
@@ -1003,14 +1003,14 @@ packages:
   '@iconify-json/ri@1.1.21':
     resolution: {integrity: sha512-ssU2CRaB4T83Q3cncCZtITholhYkH6gEL5XLmdMII6Xzn8bTCpDCkt+HdX4URc24uUMD0PGIaNLJUIAgdfLMjQ==}
 
-  '@iconify-json/simple-icons@1.1.110':
-    resolution: {integrity: sha512-5OiKacS+FL+T8sc5o9HTRVsy4HNnLiit9WkTQ1MxKOIYBhJsO7GgsMmnJPGbvhOuWZbJURLe+/Kohk4H/Sq22w==}
+  '@iconify-json/simple-icons@1.1.111':
+    resolution: {integrity: sha512-9+d69tCopShQB4a/mlQjP6uqkzJnDfeLNVwly11QMvucLIFfCG08xBXcWSyPCnfsR2bX/G50e43LaUXubNyYuw==}
 
   '@iconify-json/tabler@1.1.118':
     resolution: {integrity: sha512-nDOjYG75BlagOe4e+V3K4qVFujdPOeYzi6ZB3sYz0xbdIkpSF/4YvKGdLDr4tmkwGUTV8fhlHVfMpRoDoBnnnA==}
 
-  '@iconify/collections@1.0.443':
-    resolution: {integrity: sha512-vMf9xBQF9oTKShHuxkbsN8ZPP9rKHe83FavJmVBQZsUQ0VkUMZiW7WjlWyd+OZpg79RFg3IvtjSQnoLAffw5Xw==}
+  '@iconify/collections@1.0.444':
+    resolution: {integrity: sha512-3+dA5B8vs+qew23dwBAqv6M4LqtOHlYQiKCproN5o3lLelnA1fnWJMfv5f2RyPecaS9rZEGi1+eg8AFKF2sk1A==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -1212,8 +1212,8 @@ packages:
       vite-plugin-eslint2:
         optional: true
 
-  '@nuxt/icon@1.3.1':
-    resolution: {integrity: sha512-bpue1uzVTx3Fiwb0625ShaY5SFio8vcZ3L4kIb2tBc/BbENASQcCa27uk87zuWFJdnRWQbNpn/L4wc+wKZ0Wbw==}
+  '@nuxt/icon@1.4.0':
+    resolution: {integrity: sha512-epTJGQTOk8ScE7iN2G1laemDZrpd48l07bCFIYDCg+rgO5IJGvgbVqCIdxbvAMfZJMoH9y/q540hDRQR0ju1eA==}
 
   '@nuxt/image@1.7.0':
     resolution: {integrity: sha512-zSj32bLgbV9AvLkLX0pF52J5KBfSyj0eSIdpXCtTJATSZlqgcJigoCvmabC1nbcMIp0SZ29Bu9+acQpGTQKz+g==}
@@ -4372,8 +4372,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-vue-next@0.416.0:
-    resolution: {integrity: sha512-oNjClUpOTRhLGN0UDvtjGAWBJzYj+rJPr3DxR5aXd2eD6tIuEuF7iaofkvT220VGXAVoXKCqmgk826OJ1M6T6A==}
+  lucide-vue-next@0.417.0:
+    resolution: {integrity: sha512-uIoSKLovPHcv2QCLJLZMh7XrBvbPvOwWCyldvOKvAF/3Mbez0isAY/j1WlBnO2Nu2FUNQex6eHXbPtou55H23Q==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -7127,7 +7127,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.1.110':
+  '@iconify-json/simple-icons@1.1.111':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7135,13 +7135,25 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/collections@1.0.443':
+  '@iconify/collections@1.0.444':
     dependencies:
       '@iconify/types': 2.0.0
 
   '@iconify/types@2.0.0': {}
 
   '@iconify/utils@2.1.25':
+    dependencies:
+      '@antfu/install-pkg': 0.1.1
+      '@antfu/utils': 0.7.10
+      '@iconify/types': 2.0.0
+      debug: 4.3.6
+      kolorist: 1.8.0
+      local-pkg: 0.5.0
+      mlly: 1.7.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@iconify/utils@2.1.29':
     dependencies:
       '@antfu/install-pkg': 0.1.1
       '@antfu/utils': 0.7.10
@@ -7477,11 +7489,11 @@ snapshots:
       - utf-8-validate
       - vite
 
-  '@nuxt/icon@1.3.1(magicast@0.3.4)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.10)(terser@5.31.2))(vue@3.4.34(typescript@5.5.4))':
+  '@nuxt/icon@1.4.0(magicast@0.3.4)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.10)(terser@5.31.2))(vue@3.4.34(typescript@5.5.4))':
     dependencies:
-      '@iconify/collections': 1.0.443
+      '@iconify/collections': 1.0.444
       '@iconify/types': 2.0.0
-      '@iconify/utils': 2.1.25
+      '@iconify/utils': 2.1.29
       '@iconify/vue': 4.1.3-beta.1(vue@3.4.34(typescript@5.5.4))
       '@nuxt/devtools-kit': 1.3.9(magicast@0.3.4)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.10)(terser@5.31.2))
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.18.1)
@@ -11356,7 +11368,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-vue-next@0.416.0(vue@3.4.34(typescript@5.5.4)):
+  lucide-vue-next@0.417.0(vue@3.4.34(typescript@5.5.4)):
     dependencies:
       vue: 3.4.34(typescript@5.5.4)
 
