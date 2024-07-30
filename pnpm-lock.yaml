@@ -12,8 +12,8 @@ importers:
   .:
     dependencies:
       '@ai-sdk/mistral':
-        specifier: ^0.0.25
-        version: 0.0.25(zod@3.23.8)
+        specifier: ^0.0.26
+        version: 0.0.26(zod@3.23.8)
       '@internationalized/date':
         specifier: ^3.5.5
         version: 3.5.5
@@ -168,8 +168,8 @@ importers:
 
 packages:
 
-  '@ai-sdk/mistral@0.0.25':
-    resolution: {integrity: sha512-P628hFUk1Db0kFOs2DNIRPG0T16cQvyC8czCGZqoVTRDq9Nim3LjLc1mQ1RTRiBItJOqSvXVftFreFowJ30d5A==}
+  '@ai-sdk/mistral@0.0.26':
+    resolution: {integrity: sha512-v14/KRcpsbriNAZE1KB68RseG3Z4IBZ9g9oVqnc8i/wiTLfD9MXgJoCrJqezAtkaFb/wpdpshHPNCLgAXyrBwg==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -6297,7 +6297,7 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/mistral@0.0.25(zod@3.23.8)':
+  '@ai-sdk/mistral@0.0.26(zod@3.23.8)':
     dependencies:
       '@ai-sdk/provider': 0.0.14
       '@ai-sdk/provider-utils': 1.0.5(zod@3.23.8)
