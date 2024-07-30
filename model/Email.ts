@@ -3,7 +3,7 @@ export enum EmailStatus {
   PROCESSED = 'PROCESSED',
   SUMMARIZED = 'SUMMARIZED',
   ERROR = 'ERROR',
-  READY = 'SENT',
+  SENT = 'SENT',
 }
 
 export interface Email {

@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     'nuxt-nodemailer',
     "@nuxt/eslint",
-    '@vue-email/nuxt'
+    '@vue-email/nuxt',
+    '@pinia/nuxt'
   ],
   nitro: {
     rollupConfig: {

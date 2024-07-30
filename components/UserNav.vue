@@ -10,6 +10,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import ProfileAvatar from '@/components/ProfileAvatar.vue'
 
 const client = useSupabaseClient()
 const user = useSupabaseUser()

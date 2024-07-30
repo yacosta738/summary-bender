@@ -1,9 +1,8 @@
 import { serverSupabaseClient } from '#supabase/server';
 import type {EventHandlerRequest, H3Event} from "h3";
-// import type { Tables } from "~/types/database.types.ts";
 import { mistral } from '@ai-sdk/mistral';
 import { generateText } from 'ai';
-import {EmailStatus} from "~/services/model/Email";
+import {EmailStatus} from "~/model/Email";
 
 // type EmailEntity = Tables<"emails">;
 

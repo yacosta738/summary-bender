@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {h, type Ref} from 'vue'
+import {type Ref} from 'vue'
 import {useForm} from 'vee-validate'
 import {toTypedSchema} from '@vee-validate/zod'
 import * as z from 'zod'
@@ -23,7 +23,7 @@ const {data} = await client
 
 const emailAliasIdentifier = ref(data?.email_alias_identifier ?? '')
 const notificationsEnabled = ref(data?.notifications_enabled ?? false)
-const language = ref(data?.language ?? 'en')
+// const language = ref(data?.language ?? 'en')
 
 const notificationsFormSchema = toTypedSchema(z.object({
   summary_emails: z.boolean().default(true).optional(),
@@ -85,7 +85,7 @@ const copyAlias = async () => {
         <Badge variant="secondary">
           {{ emailAlias }}
         </Badge>
-        <Button variant="ghost" size="xs" @click="copyAlias" type="button">
+        <Button variant="ghost" size="xs" type="button" @click="copyAlias">
           Copy alias
         </Button>
       </div>

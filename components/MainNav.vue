@@ -18,17 +18,5 @@ import { cn } from '@/lib/utils'
     >
       Settings
     </a>
-    <a
-      href="/dashboard"
-      class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-    >
-      Products
-    </a>
-    <a
-      href="/dashboard"
-      class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-    >
-      Settings
-    </a>
   </nav>
 </template>

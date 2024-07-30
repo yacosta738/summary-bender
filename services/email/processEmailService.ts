@@ -1,8 +1,8 @@
 // processEmailService.ts
-import {type Email, EmailStatus} from "~/services/model/Email";
 import type {EventHandlerRequest, H3Event} from "h3";
 import {storeEmail} from "~/services/email/storeEmailService";
 import { convert } from "html-to-text";
+import {type Email, EmailStatus} from "~/model/Email";
 
 function cleanEmailBody(emailBody: string): string {
   return convert(emailBody);

@@ -3,7 +3,7 @@ import Imap from 'imap';
 import type Connection from 'imap';
 import {createImapConnection} from './imapConfig';
 import {inspect} from 'util';
-import {type Email, EmailStatus} from "~/services/model/Email";
+import {type Email, EmailStatus} from "~/model/Email";
 import type {EventHandlerRequest, H3Event} from "h3";
 
 type ProcessEmailCallback = (email: Email, event: H3Event<EventHandlerRequest>) => Promise<void>;
