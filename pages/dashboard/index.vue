@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import Overview from '@/components/Overview.vue'
-import DateRangePicker from '@/components/DateRangePicker.vue'
-import RecentEmailSender from '~/components/RecentEmailSender.vue'
-import AllEmails from "~/components/AllEmails.vue";
+import Overview from '@/components/dashboard/Overview.vue'
+import DateRangePicker from '@/components/dashboard/DateRangePicker.vue'
+import RecentEmailSender from '@/components/dashboard/RecentEmailSender.vue'
+import AllEmails from "@/components/dashboard/AllEmails.vue";
 
 import {Button} from '@/components/ui/button'
 import {Card, CardContent, CardDescription, CardHeader, CardTitle,} from '@/components/ui/card'
 import {Tabs, TabsContent, TabsList, TabsTrigger,} from '@/components/ui/tabs'
-import AppNavbar from "~/components/AppNavbar.vue";
+import AppNavbar from "@/components/dashboard/AppNavbar.vue";
 import type {
   EmailCountByDay,
   EmailCountBySender,
@@ -249,7 +249,7 @@ watch(filtersDateRange, (_) => {
           </div>
         </TabsContent>
         <TabsContent value="recent-emails" class="space-y-4">
-          <AllEmails :recentEmails="stats.recentEmails"/>
+          <AllEmails :recent-emails="stats.recentEmails"/>
         </TabsContent>
       </Tabs>
     </div>

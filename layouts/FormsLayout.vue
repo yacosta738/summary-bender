@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import SidebarNav from '@/components/SidebarNav.vue'
+import SidebarNav from '@/components/dashboard/SidebarNav.vue'
 import { Separator } from '@/components/ui/separator'
-import AppNavbar from "~/components/AppNavbar.vue";
+import AppNavbar from "~/components/dashboard/AppNavbar.vue";
 </script>
 
 <template>
