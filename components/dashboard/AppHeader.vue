@@ -9,8 +9,6 @@ const colorMode = useColorMode()
 
 const menus = [
   { name: 'Dashboard', to: '/dashboard' },
-  { name: 'Emails', to: '/dashboard/emails' },
-  { name: 'Summaries', to: '/dashboard/summaries' },
 ]
 
 const toggleDark = () => {
@@ -55,7 +53,8 @@ const logout = async () => {
           size="icon"
           @click="toggleDark"
         >
-          <Icon v-if="colorMode.value === 'light'" name="ph:moon" color="black"
+          <Icon
+v-if="colorMode.value === 'light'" name="ph:moon" color="black"
                 class="mr-2 h-4 w-4"/>
           <Icon v-else name="ph:sun" color="black" class="mr-2 h-4 w-4"/>
         </Button>
