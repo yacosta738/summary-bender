@@ -51,7 +51,7 @@ export default defineNuxtConfig({
     redirectOptions: {
       login: '/login',
       callback: '/confirm',
-      exclude: ['/confirm', '/login', '/'],
+      exclude: ['/confirm', '/login', '/','/terms','/privacy'],
     },
   },
   nodemailer: {

@@ -1,6 +1,6 @@
 import {serverSupabaseClient} from '#supabase/server'
 import {render} from '@vue-email/render';
-import SummaryEmailTemplate from "~/components/SummaryEmailTemplate.vue";
+import SummaryEmailTemplate from "@/components/dashboard/SummaryEmailTemplate.vue";
 
 const renderEmail = async (title: string, emails: string[]) => {
   return await render(SummaryEmailTemplate, {

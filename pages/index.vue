@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import AppContainer from "~/components/dashboard/AppContainer.vue";
+import AppHeader from "~/components/dashboard/AppHeader.vue";
+import LandingPage from "~/components/landing/LandingPage.vue";
+
 const user = useSupabaseUser()
 
 watchEffect(() => {
@@ -12,14 +16,7 @@ watchEffect(() => {
   <NuxtLayout>
     <AppContainer>
       <AppHeader/>
-      <PageContainer>
-        <div class="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-          <h2 class="my-6 text-center text-3xl font-extrabold u-text-white">
-            Landing page
-          </h2>
-          All the components here for the landing page
-        </div>
-      </PageContainer>
+      <LandingPage />
     </AppContainer>
   </NuxtLayout>
 </template>

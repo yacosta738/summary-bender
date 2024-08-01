@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MainNav from "~/components/MainNav.vue";
-import UserNav from "~/components/UserNav.vue";
+import MainNav from "@/components/dashboard/MainNav.vue";
+import UserNav from "@/components/dashboard/UserNav.vue";
 </script>
 
 <template>

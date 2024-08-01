@@ -43,6 +43,7 @@
     "tailwindcss-animate": "^1.0.7",
     "vee-validate": "^4.13.2",
     "vue": "latest",
+    "vue-wrap-balancer": "^1.1.3",
     "zod": "^3.23.8"
   },
   "devDependencies": {
