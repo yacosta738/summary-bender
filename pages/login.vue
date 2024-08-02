@@ -44,7 +44,7 @@ function onError(event: Event) {
     </div>
     <div class="hidden bg-muted lg:block">
       <NuxtImg
-        src="/login.avif"
+        src="/login.jpg"
         alt="Image"
         width="1920"
         height="1080"
