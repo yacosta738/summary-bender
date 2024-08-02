@@ -5,6 +5,7 @@ export default defineNuxtPlugin({
   parallel: true,
   async setup (nuxtApp) {
     const getInitials = (fullName: string): string => {
+      if (!fullName) return '';
       return fullName
       .split(' ')
       .map(name => name[0].toUpperCase())

@@ -65,7 +65,7 @@ const uploadAvatar = async (evt) => {
     }
 
     const file = files.value[0]
-    const fileExt = file.name.split('.').pop()
+    const fileExt = file?.name?.split('.')?.pop()
     const fileName = `${Math.random()}.${fileExt}`
     const filePath = `${fileName}`
 
