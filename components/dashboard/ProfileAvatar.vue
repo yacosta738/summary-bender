@@ -34,16 +34,19 @@ const isExternalProvider = (path: string, providers: string[]): boolean => {
 }
 
 const downloadImage = async () => {
-  if (!path.value) return; // Paso 1: Verificar si path es null o vacío.
-  // Paso 2: Verificar si el path es de otro proveedor.
-  // Esta es una verificación básica, ajusta la lógica según los proveedores que uses.
+  if (!path.value) return;
   const externalProviders = ["githubusercontent.com", "google.com"];
   if (isExternalProvider(path.value, externalProviders)) {
     src.value = path.value;
     console.log('External provider image:', path.value);
     return;
   }
-  // Paso 3: Proceder con la lógica de descarga de Supabase si el path no es de un proveedor externo.
+  const isDirectUrl = /^(http|https):\/\//.test(path.value);
+  if (isDirectUrl) {
+    src.value = path.value;
+    console.log('Direct URL image:', path.value);
+    return;
+  }
   try {
     const { data, error } = await supabase.storage.from('avatars').download(path.value)
     if (error) throw error

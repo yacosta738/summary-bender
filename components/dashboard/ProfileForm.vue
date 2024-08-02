@@ -29,6 +29,7 @@ import {Button} from '@/components/ui/button'
 import {toast} from '@/components/ui/toast'
 import type {User} from "@supabase/auth-js/src/lib/types";
 import {ToastAction} from "radix-vue";
+import ProfileAvatar from "~/components/dashboard/ProfileAvatar.vue";
 
 const loading = ref(true)
 
@@ -42,7 +43,7 @@ const {data} = await client
 .single()
 
 const verifiedEmails = ref([user.value.email ?? 'me@summarybender.com'])
-const avatar_path = ref(data?.avatar_url ?? user.value.user_metadata.avatar_url)
+const avatar_path = ref(data?.avatar_url ?? user.value.user_metadata.avatar_url ?? 'https://www.amongusavatarcreator.com/assets/img/main/icon.png')
 
 const profileFormSchema = toTypedSchema(z.object({
   avatar: z.string().optional(),
