@@ -1,26 +1,19 @@
 <script setup lang="ts">
+import AppLogo from '@/components/AppLogo.vue'
 import UserAuthForm from '@/components/UserAuthForm.vue'
-import AppLogo from "~/components/AppLogo.vue";
+function onError(event: Event) {
+  const target = event.target as HTMLImageElement;
+  target.src = '/placeholder.svg';
+}
 </script>
 
 <template>
-  <div class="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-    <div class="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
-      <div class="absolute inset-0 bg-zinc-900" />
-      <AppLogo />
-      <div class="relative z-20 mt-auto">
-        <blockquote class="space-y-2">
-          <p class="text-lg">
-            &ldquo;Using this tool has exponentially increased my productivity, allowing me to complete my tasks in half the time.&rdquo;
-          </p>
-          <footer class="text-sm">
-            John Smith
-          </footer>
-        </blockquote>
-      </div>
+  <div class="w-full lg:grid lg:min-h-screen lg:grid-cols-2 xl:min-h-screen">
+    <div class="absolute">
+      <AppLogo/>
     </div>
-    <div class="lg:p-8">
-      <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+    <div class="flex items-center justify-center py-12">
+      <div class="mx-4 md:mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div class="flex flex-col space-y-2 text-center">
           <h1 class="text-2xl font-semibold tracking-tight">
             Create an account
@@ -29,7 +22,7 @@ import AppLogo from "~/components/AppLogo.vue";
             Enter your email below to create your account
           </p>
         </div>
-        <UserAuthForm />
+        <UserAuthForm/>
         <p class="px-8 text-center text-sm text-muted-foreground">
           By clicking continue, you agree to our
           <a
@@ -48,6 +41,16 @@ import AppLogo from "~/components/AppLogo.vue";
           .
         </p>
       </div>
+    </div>
+    <div class="hidden bg-muted lg:block">
+      <NuxtImg
+        src="/login.avif"
+        alt="Image"
+        width="1920"
+        height="1080"
+        class="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+        @error="onError"
+      />
     </div>
   </div>
 </template>
