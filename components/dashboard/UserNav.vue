@@ -20,7 +20,7 @@ const {data} = await client
 .select(`username, website, avatar_url`)
 .eq('id', user.value.id)
 .single()
-const avatarUrl = ref(data?.avatar_url ?? user.value.user_metadata.avatar_url)
+const avatarUrl = ref(data?.avatar_url ?? user.value.user_metadata.avatar_url ?? 'https://www.amongusavatarcreator.com/assets/img/main/icon.png')
 const logout = async () => {
   await client.auth.signOut()
   navigateTo('/')
