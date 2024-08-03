@@ -32,6 +32,7 @@ class EmailService {
   }
 
   private listenForNewEmails() {
+    console.log('🔵 Listening for new emails...');
     this.imap.on('mail', (numNewMsgs) => {
       console.log(`${numNewMsgs} new messages`);
       this.imap.search(['UNSEEN'], (err, results) => {
@@ -124,6 +125,7 @@ class EmailService {
   }
 
   public connect() {
+    console.log('🟢 Connecting to email server...');
     this.imap.connect();
   }
 }
