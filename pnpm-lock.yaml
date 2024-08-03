@@ -14,6 +14,12 @@ importers:
       '@ai-sdk/mistral':
         specifier: ^0.0.26
         version: 0.0.26(zod@3.23.8)
+      '@ai-sdk/openai':
+        specifier: ^0.0.40
+        version: 0.0.40(zod@3.23.8)
+      '@ai-sdk/vue':
+        specifier: ^0.0.28
+        version: 0.0.28(vue@3.4.34(typescript@5.5.4))(zod@3.23.8)
       '@internationalized/date':
         specifier: ^3.5.5
         version: 3.5.5
@@ -54,8 +60,8 @@ importers:
         specifier: ^10.11.0
         version: 10.11.0(vue@3.4.34(typescript@5.5.4))
       ai:
-        specifier: ^3.2.45
-        version: 3.2.45(react@18.3.1)(sswr@2.1.0(svelte@4.2.18))(svelte@4.2.18)(vue@3.4.34(typescript@5.5.4))(zod@3.23.8)
+        specifier: ^3.3.0
+        version: 3.3.0(react@18.3.1)(sswr@2.1.0(svelte@4.2.18))(svelte@4.2.18)(vue@3.4.34(typescript@5.5.4))(zod@3.23.8)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -75,8 +81,8 @@ importers:
         specifier: ^0.8.19
         version: 0.8.19
       lucide-vue-next:
-        specifier: ^0.419.0
-        version: 0.419.0(vue@3.4.34(typescript@5.5.4))
+        specifier: ^0.424.0
+        version: 0.424.0(vue@3.4.34(typescript@5.5.4))
       node-cron:
         specifier: ^3.0.3
         version: 3.0.3
@@ -182,6 +188,12 @@ packages:
 
   '@ai-sdk/mistral@0.0.26':
     resolution: {integrity: sha512-v14/KRcpsbriNAZE1KB68RseG3Z4IBZ9g9oVqnc8i/wiTLfD9MXgJoCrJqezAtkaFb/wpdpshHPNCLgAXyrBwg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+
+  '@ai-sdk/openai@0.0.40':
+    resolution: {integrity: sha512-9Iq1UaBHA5ZzNv6j3govuKGXrbrjuWvZIgWNJv4xzXlDMHu9P9hnqlBr/Aiay54WwCuTVNhTzAUTfFgnTs2kbQ==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -2376,8 +2388,8 @@ packages:
     resolution: {integrity: sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==}
     engines: {node: '>= 14'}
 
-  ai@3.2.45:
-    resolution: {integrity: sha512-FRsxS9ydMMTT851aNE8uyyXZ86IjJigOe5mYdhbpSsz8okTPJPFo0bSlZULvNKttonU7UvU4hCzZV0qAMMZm+w==}
+  ai@3.3.0:
+    resolution: {integrity: sha512-ndW4G9jw8ImIsTWK2iderOWMVn4H3B6u+KHlZ7hJEvFBdBYTFQ62qTw10AmHsQefjwHRC/2evr9qf79EkSwo9Q==}
     engines: {node: '>=18'}
     peerDependencies:
       openai: ^4.42.0
@@ -4375,8 +4387,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-vue-next@0.419.0:
-    resolution: {integrity: sha512-KJ8SUZ/03RBDHMMrSyEWQ/I05IbNzGOXeoS9jqAMorCrTB+xXarjuof17gq3nFWK7SVTT7MVXjsGkGx8vPVj+Q==}
+  lucide-vue-next@0.424.0:
+    resolution: {integrity: sha512-RXOGJnqYcRFI48KcitDCfSz9wMtcx2tg7YfvtBX5f2aopaDwY2bABccFgjoapnpwPy1zser7zPS4CgBlp1/img==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -6409,6 +6421,12 @@ packages:
 snapshots:
 
   '@ai-sdk/mistral@0.0.26(zod@3.23.8)':
+    dependencies:
+      '@ai-sdk/provider': 0.0.14
+      '@ai-sdk/provider-utils': 1.0.5(zod@3.23.8)
+      zod: 3.23.8
+
+  '@ai-sdk/openai@0.0.40(zod@3.23.8)':
     dependencies:
       '@ai-sdk/provider': 0.0.14
       '@ai-sdk/provider-utils': 1.0.5(zod@3.23.8)
@@ -9164,7 +9182,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ai@3.2.45(react@18.3.1)(sswr@2.1.0(svelte@4.2.18))(svelte@4.2.18)(vue@3.4.34(typescript@5.5.4))(zod@3.23.8):
+  ai@3.3.0(react@18.3.1)(sswr@2.1.0(svelte@4.2.18))(svelte@4.2.18)(vue@3.4.34(typescript@5.5.4))(zod@3.23.8):
     dependencies:
       '@ai-sdk/provider': 0.0.14
       '@ai-sdk/provider-utils': 1.0.5(zod@3.23.8)
@@ -11366,7 +11384,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-vue-next@0.419.0(vue@3.4.34(typescript@5.5.4)):
+  lucide-vue-next@0.424.0(vue@3.4.34(typescript@5.5.4)):
     dependencies:
       vue: 3.4.34(typescript@5.5.4)
 

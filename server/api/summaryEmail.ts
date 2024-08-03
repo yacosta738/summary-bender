@@ -1,6 +1,8 @@
 import {summarizeContent} from "~/services/summarizeContent";
 
-export default defineEventHandler(async (event) => {
-  console.log('🟡 Summarizing content...')
-  await summarizeContent(event)
-})
+export default defineLazyEventHandler(async () => {
+  return defineEventHandler(async (event: any) => {
+    console.log('🟡 Summarizing content...')
+    return await summarizeContent(event)
+  });
+});

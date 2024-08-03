@@ -1,8 +1,8 @@
 import { serverSupabaseClient } from '#supabase/server';
 import type {EventHandlerRequest, H3Event} from "h3";
-import { mistral } from '@ai-sdk/mistral';
 import { generateText } from 'ai';
 import {EmailStatus} from "~/model/Email";
+import {openai} from "@ai-sdk/openai";
 
 // type EmailEntity = Tables<"emails">;
 
@@ -17,7 +17,7 @@ async function summary(emailBody: string): Promise<string> {
   Summary:
   `;
   const {text} = await generateText({
-    model: mistral('mistral-large-latest'),
+    model: openai('gpt-4o-mini'),
     prompt: prompt,
   });
   return text;
@@ -25,7 +25,6 @@ async function summary(emailBody: string): Promise<string> {
 
 export const summarizeContent = async (event: H3Event<EventHandlerRequest>) => {
   const client = await serverSupabaseClient(event);
-  console.log('🟣🟣 Summarizing emails...');
   const { data, error } = await client
   .from('emails')
   .select('id,body')

@@ -31,6 +31,7 @@ export default defineNuxtConfig({
       baseUrl: process.env.BASE_URL || 'http://localhost:3000',
       generalEmail: process.env.SMTP_USER || ''
     },
+    openaiApiKey: process.env.OPENAI_API_KEY,
   },
   shadcn: {
     /**
