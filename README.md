@@ -1,6 +1,8 @@
 # Summary Bender
 
 Welcome to the Summary Bender application, an advanced tool that uses artificial intelligence to efficiently and accurately summarize emails.
+![image](https://github.com/user-attachments/assets/523ebd1a-3ef7-4e07-a972-32dc730abcd9)
+
 
 ## Documentation
 
