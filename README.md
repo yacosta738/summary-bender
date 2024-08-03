@@ -93,6 +93,15 @@ SMTP_USER="<your_email>"
 SMTP_PASS="<your_password>"
 OPENAI_API_KEY="<your_key>"
 ```
+### Using Gmail
+
+To use Gmail as your email provider, you need to set up an app password and enable IMAP. Follow these steps:
+
+	1.	Enable IMAP in Gmail: Follow the instructions in this [Google support article](https://support.google.com/mail/answer/7126229) to enable IMAP for your Gmail account.
+	2.	Create an App Password: If you have 2-Step Verification enabled, you need to create an app password to use with your email application. Follow the instructions in this [Google support article](https://support.google.com/accounts/answer/185833) to create an app password.
+
+Replace <your_email> with your Gmail address and <your_app_password> with the app password you created.
+
 
 ## Features
 
