@@ -11,9 +11,6 @@ importers:
 
   .:
     dependencies:
-      '@ai-sdk/mistral':
-        specifier: ^0.0.26
-        version: 0.0.26(zod@3.23.8)
       '@ai-sdk/openai':
         specifier: ^0.0.40
         version: 0.0.40(zod@3.23.8)
@@ -185,12 +182,6 @@ importers:
         version: 2.0.29(typescript@5.5.4)
 
 packages:
-
-  '@ai-sdk/mistral@0.0.26':
-    resolution: {integrity: sha512-v14/KRcpsbriNAZE1KB68RseG3Z4IBZ9g9oVqnc8i/wiTLfD9MXgJoCrJqezAtkaFb/wpdpshHPNCLgAXyrBwg==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      zod: ^3.0.0
 
   '@ai-sdk/openai@0.0.40':
     resolution: {integrity: sha512-9Iq1UaBHA5ZzNv6j3govuKGXrbrjuWvZIgWNJv4xzXlDMHu9P9hnqlBr/Aiay54WwCuTVNhTzAUTfFgnTs2kbQ==}
@@ -6419,12 +6410,6 @@ packages:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
 snapshots:
-
-  '@ai-sdk/mistral@0.0.26(zod@3.23.8)':
-    dependencies:
-      '@ai-sdk/provider': 0.0.14
-      '@ai-sdk/provider-utils': 1.0.5(zod@3.23.8)
-      zod: 3.23.8
 
   '@ai-sdk/openai@0.0.40(zod@3.23.8)':
     dependencies:
