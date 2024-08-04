@@ -119,7 +119,7 @@ importers:
         version: 1.1.4
       '@iconify-json/lucide':
         specifier: ^1.1.204
-        version: 1.1.204
+        version: 1.1.205
       '@iconify-json/ph':
         specifier: ^1.1.13
         version: 1.1.14
@@ -997,8 +997,8 @@ packages:
   '@iconify-json/gravity-ui@1.1.4':
     resolution: {integrity: sha512-Oezyd2Ga/gRWqP/RptimLe4Xx1q1psdq4CS3gVASDzTxbUCjMOJe4hf3+ilkYZNv6L4Ib5L26s40MFTKh6Tjlg==}
 
-  '@iconify-json/lucide@1.1.204':
-    resolution: {integrity: sha512-yu85ErrSULW+4/glQjfa+RhwNVq/N55nxQJMUSo2d/gojSr6DdyaoI/l/o6YkPrG0UEwvnP6nWDD8YEJSThVrA==}
+  '@iconify-json/lucide@1.1.205':
+    resolution: {integrity: sha512-PTA7UXYCRETE7DneGSW5XbUKCmyNYHp2KuM623NgTK3IjqdRbTw0dm2YPhsSZpaRswvHFFi71JtbKPHQTLfX+Q==}
 
   '@iconify-json/ph@1.1.14':
     resolution: {integrity: sha512-s1hZVaxIpl40qLEhjqPRMcZl4A3M4fZ+77Fi+VuOb/eKkIHIMutAoBHIR+0a3l7psUweZQGj9hSyL2P5CIj6qA==}
@@ -7125,7 +7125,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.1.204':
+  '@iconify-json/lucide@1.1.205':
     dependencies:
       '@iconify/types': 2.0.0
 
